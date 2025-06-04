@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A1D4C8BE2DF039A900C2A78A /* prompt.md in Resources */ = {isa = PBXBuildFile; fileRef = A1D4C8BD2DF039A900C2A78A /* prompt.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		A1D4C8AA2DF0368D00C2A78A /* ToDoListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1D4C8BD2DF039A900C2A78A /* prompt.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = prompt.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		A1D4C8A12DF0368C00C2A78A = {
 			isa = PBXGroup;
 			children = (
+				A1D4C8BD2DF039A900C2A78A /* prompt.md */,
 				A1D4C8AC2DF0368D00C2A78A /* ToDoListApp */,
 				A1D4C8AB2DF0368D00C2A78A /* Products */,
 			);
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D4C8BE2DF039A900C2A78A /* prompt.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
