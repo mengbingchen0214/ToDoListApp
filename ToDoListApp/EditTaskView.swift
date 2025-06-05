@@ -13,6 +13,14 @@ struct EditTaskView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) var dismiss
 
+    @State private var datePickerDate: Date
+
+    init(item: Item) {
+        self.item = item
+        // Initialize _datePickerDate with item.dueDate or current date if nil
+        self._datePickerDate = State(initialValue: item.dueDate ?? Date())
+    }
+
     var body: some View {
         Form {
             Section(header: Text("Task Details")) {
@@ -22,9 +30,10 @@ struct EditTaskView: View {
             }
 
             Section(header: Text("Due Date")) {
-                DatePicker("Due Date", selection: $item.dueDate, displayedComponents: .date)
+                DatePicker("Due Date", selection: $datePickerDate, displayedComponents: .date)
                 Button("Clear Due Date") {
                     item.dueDate = nil
+                    datePickerDate = Date() // Reset state date for DatePicker
                 }
             }
         }
@@ -32,6 +41,13 @@ struct EditTaskView: View {
         .toolbar {
             // No explicit save button needed as @Bindable updates the model directly.
             // A toolbar could be added here for other actions if needed in the future.
+        }
+        .onChange(of: datePickerDate) { oldValue, newValue in
+            item.dueDate = newValue
+        }
+        .onChange(of: item.dueDate) { oldValue, newValue in
+            // Update datePickerDate if item.dueDate changes externally or is cleared
+            datePickerDate = newValue ?? Date()
         }
     }
 }
