@@ -1,0 +1,25 @@
+// General
+"Name" = "Name";
+"Details" = "Details";
+"Category" = "Category";
+"Due Date" = "Due Date";
+"Add Item" = "Add Item";
+"Select an item" = "Select an item";
+"Edit Task" = "Edit Task";
+"Clear Due Date" = "Clear Due Date";
+"Task Details" = "Task Details";
+"All Categories" = "All Categories";
+"Sort By" = "Sort By";
+"Search tasks" = "Search tasks"; // Search bar prompt
+"Add new task..." = "Add new task..."; // TextField placeholder
+"New Task from Toolbar" = "New Task from Toolbar"; // Default name for task from toolbar
+"due_date_prefix" = "Due: "; // Prefix for displaying due date
+
+// Sort Options
+"Newest First" = "Newest First";
+"Oldest First" = "Oldest First";
+"Due Date (Earliest First)" = "Due Date (Earliest First)";
+"Due Date (Latest First)" = "Due Date (Latest First)";
+"Name (A-Z)" = "Name (A-Z)";
+"Name (Z-A)" = "Name (Z-A)";
+"Completion Status" = "Completion Status";

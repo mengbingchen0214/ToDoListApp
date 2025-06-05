@@ -98,7 +98,7 @@ struct ContentView: View {
                                         .strikethrough(item.isCompleted) // Use default strikethrough color
 
                                     if let dueDate = item.dueDate {
-                                        Text("Due: \(dueDate, formatter: Self.dateFormatter)")
+                                        (Text(LocalizedStringKey("due_date_prefix")) + Text(dueDate, formatter: Self.dateFormatter))
                                             .font(.caption)
                                             .foregroundColor(item.isOverdue ? .red : .gray)
                                     }
@@ -110,7 +110,7 @@ struct ContentView: View {
                 }
 
                 HStack {
-                    TextField("Add new task...", text: $newTaskName)
+                    TextField(LocalizedStringKey("Add new task..."), text: $newTaskName)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .onSubmit(submitNewTask)
                     Button(action: submitNewTask) {
@@ -121,33 +121,35 @@ struct ContentView: View {
                 }
                 .padding()
             }
-            .searchable(text: $searchText, prompt: "Search tasks")
+            .searchable(text: $searchText, prompt: Text(LocalizedStringKey("Search tasks")))
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
-                    Picker("Category", selection: $selectedCategory) {
-                        Text("All Categories").tag(nil as String?)
+                    Picker(LocalizedStringKey("Category"), selection: $selectedCategory) {
+                        Text(LocalizedStringKey("All Categories")).tag(nil as String?)
                         ForEach(uniqueCategories, id: \.self) { category in
-                            Text(category).tag(category as String?)
+                            Text(category).tag(category as String?) // Categories are user-defined, not localized here
                         }
                     }
                 }
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    Picker("Sort By", selection: $currentSortOption) {
+                    Picker(LocalizedStringKey("Sort By"), selection: $currentSortOption) {
                         ForEach(SortOption.allCases) { option in
-                            Text(option.rawValue).tag(option)
+                            Text(option.rawValue).tag(option) // Uses rawValue as key
                         }
                     }
                     EditButton() // Keep EditButton
                 }
                 // Keep existing Add Item button
                 ToolbarItem(placement: .bottomBar) { // Moved to bottomBar for space, or could be with Edit
-                     Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                     Button {
+                        addItem()
+                     } label: {
+                        Label(LocalizedStringKey("Add Item"), systemImage: "plus")
                     }
                 }
             }
         } detail: {
-            Text("Select an item")
+            Text(LocalizedStringKey("Select an item"))
         }
     }
 
@@ -161,7 +163,7 @@ struct ContentView: View {
 
     private func addItem() { // This function is now for the toolbar button, not quick add
         withAnimation {
-            let newItem = Item(name: "New Task from Toolbar", creationDate: Date())
+            let newItem = Item(name: NSLocalizedString("New Task from Toolbar", comment: "Default name for task created via toolbar button"), creationDate: Date())
             modelContext.insert(newItem)
         }
     }

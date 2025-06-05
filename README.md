@@ -56,3 +56,18 @@ A simple and practical to-do list application for iOS, built with SwiftUI and Sw
 *   **`ToDoListApp.xcodeproj/`**: Xcode project file.
 *   **`prompt.md`**: The original requirements document for the app.
 *   **`README.md`**: This file.
+
+## Future Enhancements
+
+*   **Advanced Repeating Tasks**: Allow users to set tasks that repeat on daily, weekly, monthly, or custom schedules.
+*   **Cloud Synchronization**: Integrate with iCloud (SwiftData's native capability) or other cloud services to sync tasks across multiple devices.
+*   **Notifications & Reminders**: Implement local notifications to remind users of upcoming or overdue tasks.
+*   **Customizable Categories**: Allow users to define categories with custom names and assign colors to them for better visual organization.
+*   **Subtasks**: Support for breaking down larger tasks into smaller, manageable subtasks.
+*   **Attachments**: Allow users to attach images or files to tasks.
+*   **Themes & Appearance Customization**: Offer different themes or more granular control over the app's appearance beyond system light/dark mode.
+*   **Expanded Language Support**: Add support for more languages based on user demand.
+*   **iOS Widgets**: Create home screen widgets for quick task viewing or adding.
+*   **Collaboration**: Allow sharing of task lists with other users for collaborative projects.
+*   **Gamification**: Introduce points or rewards for task completion to motivate users.
+*   **Siri Integration**: Allow adding or querying tasks using Siri.

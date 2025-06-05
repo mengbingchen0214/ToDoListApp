@@ -23,21 +23,21 @@ struct EditTaskView: View {
 
     var body: some View {
         Form {
-            Section(header: Text("Task Details")) {
-                TextField("Name", text: $item.name)
-                TextField("Details", text: $item.details, axis: .vertical)
-                TextField("Category", text: $item.category)
+            Section(header: Text(LocalizedStringKey("Task Details"))) {
+                TextField(LocalizedStringKey("Name"), text: $item.name)
+                TextField(LocalizedStringKey("Details"), text: $item.details, axis: .vertical)
+                TextField(LocalizedStringKey("Category"), text: $item.category) // Category itself is user data
             }
 
-            Section(header: Text("Due Date")) {
-                DatePicker("Due Date", selection: $datePickerDate, displayedComponents: .date)
-                Button("Clear Due Date") {
+            Section(header: Text(LocalizedStringKey("Due Date"))) {
+                DatePicker(LocalizedStringKey("Due Date"), selection: $datePickerDate, displayedComponents: .date)
+                Button(LocalizedStringKey("Clear Due Date")) {
                     item.dueDate = nil
                     datePickerDate = Date() // Reset state date for DatePicker
                 }
             }
         }
-        .navigationTitle("Edit Task")
+        .navigationTitle(LocalizedStringKey("Edit Task"))
         .toolbar {
             // No explicit save button needed as @Bindable updates the model directly.
             // A toolbar could be added here for other actions if needed in the future.
