@@ -1,0 +1,25 @@
+// General
+"Name" = "名称";
+"Details" = "详情";
+"Category" = "类别";
+"Due Date" = "截止日期";
+"Add Item" = "添加项目";
+"Select an item" = "选择一个项目";
+"Edit Task" = "编辑任务";
+"Clear Due Date" = "清除截止日期";
+"Task Details" = "任务详情";
+"All Categories" = "所有类别";
+"Sort By" = "排序方式";
+"Search tasks" = "搜索任务"; // Search bar prompt
+"Add new task..." = "添加新任务..."; // TextField placeholder
+"New Task from Toolbar" = "来自工具栏的新任务"; // Default name for task from toolbar
+"due_date_prefix" = "截止: "; // Prefix for displaying due date
+
+// Sort Options
+"Newest First" = "最新优先";
+"Oldest First" = "最早优先";
+"Due Date (Earliest First)" = "截止日期 (最早)";
+"Due Date (Latest First)" = "截止日期 (最晚)";
+"Name (A-Z)" = "名称 (A-Z)";
+"Name (Z-A)" = "名称 (Z-A)";
+"Completion Status" = "完成状态";
